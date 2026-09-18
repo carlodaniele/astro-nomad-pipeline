@@ -7,7 +7,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://astro-nomad-pipeline-9ng0j.kinsta.page/',
-	base: '/astro-nomad-pipeline',
+	base: '/',
 	integrations: [mdx(), sitemap()],
 	fonts: [
 		{
