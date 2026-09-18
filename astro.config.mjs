@@ -6,7 +6,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://carlodaniele.github.io',
+	site: 'https://astro-nomad-pipeline-9ng0j.kinsta.page/',
 	base: '/astro-nomad-pipeline',
 	integrations: [mdx(), sitemap()],
 	fonts: [
