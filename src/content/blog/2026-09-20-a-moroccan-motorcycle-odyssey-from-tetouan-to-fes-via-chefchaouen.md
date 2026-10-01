@@ -2,6 +2,7 @@
 title: "A Moroccan Motorcycle Odyssey: From Tetouan to Fes via Chefchaouen"
 description: "Embark on a challenging yet rewarding motorcycle journey through northern Morocco, from Tetouan to Fes, with a scenic stop in the captivating blue city of Chefchaouen."
 pubDate: 2026-09-20
+journey: 2026-spain-morocco
 tags: ["morocco", "travel", "motorcycle-journey", "chefchaouen", "fes", "rif-mountains", "medina"]
 heroImage: "../../assets/blog/a-moroccan-motorcycle-odyssey-from-tetouan-to-fes-via-chefchaouen-1.jpg"
 ---

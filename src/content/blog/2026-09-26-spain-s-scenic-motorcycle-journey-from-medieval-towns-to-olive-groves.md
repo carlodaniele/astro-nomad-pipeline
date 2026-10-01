@@ -2,6 +2,7 @@
 title: "Spain's Scenic Motorcycle Journey: From Medieval Towns to Olive Groves"
 description: "Join us on the second day of our motorcycle adventure across Spain, traversing stunning landscapes, historic towns like Albarracín, Alcaraz, and Úbeda, and vast olive groves."
 pubDate: 2026-09-26
+journey: 2026-spain-morocco
 tags: ["motorcycle-travel", "spain", "albarracin", "alcaraz", "ubeda", "olive-groves", "landscapes", "road-trip", "andalusia", "aragon", "castilla-la-mancha"]
 heroImage: "../../assets/blog/spain-s-scenic-motorcycle-journey-from-medieval-towns-to-olive-groves-1.jpg"
 ---

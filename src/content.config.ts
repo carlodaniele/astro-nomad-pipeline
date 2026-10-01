@@ -14,7 +14,19 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
+			journey: z.string().optional(),
 		}),
 });
 
-export const collections = { blog };
+const journeys = defineCollection({
+	loader: glob({ base: './src/content/journeys', pattern: '**/*.md' }),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			description: z.string(),
+			region: z.string(),
+			heroImage: image(),
+		}),
+});
+
+export const collections = { blog, journeys };

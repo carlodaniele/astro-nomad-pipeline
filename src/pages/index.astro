@@ -1,49 +1,349 @@
 ---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const [journeys, allPosts] = await Promise.all([getCollection('journeys'), getCollection('blog')]);
+const unknownJourneyIds = allPosts
+	.map((post) => post.data.journey)
+	.filter((journeyId): journeyId is string => Boolean(journeyId) && !journeys.some((journey) => journey.id === journeyId));
+
+if (unknownJourneyIds.length > 0) {
+	throw new Error(`Unknown journey IDs in blog posts: ${[...new Set(unknownJourneyIds)].join(', ')}`);
+}
+
+const journeyCards = journeys
+	.map((journey) => {
+		const posts = allPosts
+			.filter((post) => post.data.journey === journey.id)
+			.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+		return { journey, posts };
+	})
+	.filter(({ posts }) => posts.length > 0)
+	.sort((a, b) => b.posts[0].data.pubDate.valueOf() - a.posts[0].data.pubDate.valueOf());
+
+const heroJourney = journeyCards[0]?.journey;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<meta name="theme-color" content="#26362f" />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			{heroJourney && (
+				<section class="hero" aria-labelledby="hero-title">
+					<Image
+						class="hero-image"
+						src={heroJourney.data.heroImage}
+						alt="Spanish road journey"
+						width={2000}
+						height={1100}
+						loading="eager"
+					/>
+					<div class="hero-shade"></div>
+					<div class="hero-copy">
+						<p class="eyebrow">A motorcycle travel journal</p>
+						<h1 id="hero-title">{SITE_TITLE}</h1>
+						<p class="hero-description">
+							Routes, landscapes, and stories from the saddle.
+						</p>
+						<a class="hero-link" href="#journeys">Explore the journeys <span aria-hidden="true">↓</span></a>
+					</div>
+					<p class="hero-caption">{heroJourney.data.region}</p>
+				</section>
+			)}
+
+			<section class="journeys-section" id="journeys" aria-labelledby="journeys-title">
+				<div class="section-heading">
+					<div>
+						<p class="eyebrow">Out there, one road at a time</p>
+						<h2 id="journeys-title">Journeys</h2>
+					</div>
+					<p class="section-intro">Choose a route to explore its places, roads, and field notes.</p>
+				</div>
+
+				<div class="journey-grid">
+					{journeyCards.map(({ journey, posts }, index) => (
+						<article class="journey-card">
+							<a class="journey-link" href={`/journeys/${journey.id}/`}>
+								<div class="cover-wrap">
+									<Image
+										class="journey-cover"
+										src={journey.data.heroImage}
+										alt={`${journey.data.title} landscape`}
+										width={900}
+										height={620}
+										loading="lazy"
+									/>
+									<span class="card-index">0{index + 1}</span>
+								</div>
+								<div class="card-meta">
+									<span>{journey.data.region}</span>
+									<span>{posts.length} {posts.length === 1 ? 'story' : 'stories'}</span>
+								</div>
+								<h3>{journey.data.title}</h3>
+								<p>{journey.data.description}</p>
+								<span class="card-cta">View journey <span aria-hidden="true">↗</span></span>
+							</a>
+						</article>
+					))}
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	:global(html) {
+		scroll-behavior: smooth;
+	}
+	:global(body) {
+		background: #f7f6f1;
+		color: #26362f;
+	}
+	main {
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		padding: 0;
+	}
+	.hero {
+		position: relative;
+		isolation: isolate;
+		min-height: calc(100vh - 5rem);
+		min-height: calc(100svh - 5rem);
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		background: #26362f;
+		color: white;
+	}
+	.hero-image,
+	.hero-shade {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+	}
+	.hero-image {
+		object-fit: cover;
+		object-position: center 58%;
+	}
+	.hero-shade {
+		z-index: 0;
+		background: rgba(17, 28, 23, 0.42);
+	}
+	.hero-copy {
+		position: relative;
+		z-index: 1;
+		width: min(1180px, calc(100% - 64px));
+		margin: 0 auto;
+		padding: 96px 0 112px;
+	}
+	.eyebrow {
+		margin: 0 0 16px;
+		color: #e8bc72;
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.hero h1 {
+		max-width: 780px;
+		margin: 0 0 18px;
+		color: white;
+		font-size: 64px;
+		line-height: 1.02;
+	}
+	.hero-description {
+		max-width: 560px;
+		margin: 0;
+		color: #f5f2e9;
+		font-size: 20px;
+		line-height: 1.5;
+	}
+	.hero-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 12px;
+		margin-top: 30px;
+		padding-bottom: 5px;
+		border-bottom: 1px solid #e8bc72;
+		color: white;
+		font-size: 16px;
+		font-weight: 700;
+		text-decoration: none;
+	}
+	.hero-link:hover {
+		color: #e8bc72;
+	}
+	.hero-caption {
+		position: absolute;
+		right: 32px;
+		bottom: 20px;
+		z-index: 1;
+		margin: 0;
+		color: white;
+		font-size: 13px;
+	}
+	.journeys-section {
+		width: min(1180px, calc(100% - 64px));
+		margin: 0 auto;
+		padding: 80px 0 104px;
+		scroll-margin-top: 5rem;
+	}
+	.section-heading {
+		display: flex;
+		align-items: end;
+		justify-content: space-between;
+		gap: 32px;
+		margin-bottom: 34px;
+	}
+	.section-heading .eyebrow {
+		color: #9a5d35;
+	}
+	.section-heading h2 {
+		margin: 0;
+		color: #26362f;
+		font-size: 42px;
+	}
+	.section-intro {
+		max-width: 350px;
+		margin: 0 0 5px;
+		color: #59655e;
+		font-size: 16px;
+	}
+	.journey-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 28px;
+	}
+	.journey-card {
+		min-width: 0;
+		border-top: 1px solid #c9c7bc;
+	}
+	.journey-link {
+		display: block;
+		padding-top: 14px;
+		color: inherit;
+		text-decoration: none;
+	}
+	.cover-wrap {
+		position: relative;
+		aspect-ratio: 1.45;
+		overflow: hidden;
+		background: #d9ddd5;
+	}
+	.journey-cover {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 240ms ease;
+	}
+	.journey-link:hover .journey-cover {
+		transform: scale(1.035);
+	}
+	.card-index {
+		position: absolute;
+		left: 12px;
+		bottom: 12px;
+		padding: 4px 8px;
+		background: #f7f6f1;
+		color: #26362f;
+		font-size: 13px;
+		font-weight: 700;
+	}
+	.card-meta {
+		display: flex;
+		justify-content: space-between;
+		gap: 12px;
+		margin: 17px 0 10px;
+		color: #9a5d35;
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.journey-card h3 {
+		margin: 0 0 9px;
+		color: #26362f;
+		font-size: 25px;
+		line-height: 1.15;
+	}
+	.journey-card p {
+		min-height: 78px;
+		margin: 0;
+		color: #59655e;
+		font-size: 16px;
+		line-height: 1.55;
+	}
+	.card-cta {
+		display: inline-flex;
+		gap: 10px;
+		margin-top: 16px;
+		color: #26362f;
+		font-size: 15px;
+		font-weight: 700;
+	}
+	@media (max-width: 900px) {
+		.journey-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			row-gap: 38px;
+		}
+		.journey-card p {
+			min-height: 0;
+		}
+	}
+	@media (max-width: 620px) {
+		.hero {
+			min-height: calc(100vh - 4.5rem);
+			min-height: calc(100svh - 4.5rem);
+		}
+		.hero-copy,
+		.journeys-section {
+			width: calc(100% - 40px);
+		}
+		.hero-copy {
+			padding: 78px 0 96px;
+		}
+		.hero h1 {
+			font-size: 48px;
+		}
+		.hero-description {
+			font-size: 18px;
+		}
+		.hero-caption {
+			right: 20px;
+		}
+		.journeys-section {
+			padding: 58px 0 72px;
+		}
+		.section-heading {
+			align-items: start;
+			flex-direction: column;
+			gap: 12px;
+		}
+		.section-heading h2 {
+			font-size: 36px;
+		}
+		.journey-grid {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 34px;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		:global(html) {
+			scroll-behavior: auto;
+		}
+		.journey-cover {
+			transition: none;
+		}
+	}
+</style>

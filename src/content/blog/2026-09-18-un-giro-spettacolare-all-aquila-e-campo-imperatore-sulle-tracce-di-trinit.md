@@ -2,6 +2,7 @@
 title: "Un Giro Spettacolare all'Aquila e Campo Imperatore: Sulle Tracce di Trinità"
 description: "Un indimenticabile giro da L'Aquila a Campo Imperatore, con strade perfette e paesaggi mozzafiato, ripercorrendo i luoghi iconici di celebri film western. Un'esperienza da non perdere per amanti della natura e del cinema."
 pubDate: 2026-09-18
+journey: 2026-abruzzo-campo-imperatore
 tags: ["aquila", "campo-imperatore", "abruzzo", "giro-in-moto", "film-trinita", "gran-sasso", "paesaggi", "orografia", "geografia", "turismo-italia"]
 heroImage: "../../assets/blog/un-giro-spettacolare-all-aquila-e-campo-imperatore-sulle-tracce-di-trinit-1.jpg"
 ---
