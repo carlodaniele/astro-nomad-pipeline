@@ -25,7 +25,10 @@ const journeyCards = journeys
 	.filter(({ posts }) => posts.length > 0)
 	.sort((a, b) => b.posts[0].data.pubDate.valueOf() - a.posts[0].data.pubDate.valueOf());
 
-const heroJourney = journeyCards[0]?.journey;
+const heroPost = allPosts
+	.filter((post) => post.data.heroImage)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())[0];
+const heroJourney = journeyCards.find(({ journey }) => journey.id === heroPost?.data.journey)?.journey;
 ---
 
 <!doctype html>
@@ -37,12 +40,12 @@ const heroJourney = journeyCards[0]?.journey;
 	<body>
 		<Header />
 		<main>
-			{heroJourney && (
+			{heroPost?.data.heroImage && (
 				<section class="hero" aria-labelledby="hero-title">
 					<Image
 						class="hero-image"
-						src={heroJourney.data.heroImage}
-						alt="Spanish road journey"
+						src={heroPost.data.heroImage}
+						alt={`${heroPost.data.title} travel image`}
 						width={2000}
 						height={1100}
 						loading="eager"
@@ -56,7 +59,7 @@ const heroJourney = journeyCards[0]?.journey;
 						</p>
 						<a class="hero-link" href="#journeys">Explore the journeys <span aria-hidden="true">↓</span></a>
 					</div>
-					<p class="hero-caption">{heroJourney.data.region}</p>
+					{heroJourney && <p class="hero-caption">{heroJourney.data.region}</p>}
 				</section>
 			)}
 
@@ -240,16 +243,18 @@ const heroJourney = journeyCards[0]?.journey;
 		position: relative;
 		aspect-ratio: 1.45;
 		overflow: hidden;
+		border-radius: 12px;
 		background: #d9ddd5;
+		transition: box-shadow 240ms ease;
 	}
 	.journey-cover {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform 240ms ease;
+		border-radius: 12px;
 	}
-	.journey-link:hover .journey-cover {
-		transform: scale(1.035);
+	.journey-link:hover .cover-wrap {
+		box-shadow: var(--box-shadow);
 	}
 	.card-index {
 		position: absolute;

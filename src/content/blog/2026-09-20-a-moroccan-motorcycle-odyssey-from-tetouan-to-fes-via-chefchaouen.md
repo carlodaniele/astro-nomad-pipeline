@@ -7,8 +7,6 @@ tags: ["morocco", "travel", "motorcycle-journey", "chefchaouen", "fes", "rif-mou
 heroImage: "../../assets/blog/a-moroccan-motorcycle-odyssey-from-tetouan-to-fes-via-chefchaouen-1.jpg"
 ---
 
-# A Moroccan Motorcycle Odyssey: From Tetouan to Fes via Chefchaouen
-
 On April 17th, an intrepid motorcycle journey commenced from Tetouan, destined for Fes, with a significant stopover in the renowned blue city of Chefchaouen. This adventure proved to be both geographically diverse and remarkably challenging from its outset, demanding constant attention from the riders.
 
 ## The Challenging Route Through the Rif

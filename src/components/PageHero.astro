@@ -1,0 +1,103 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+	image: ImageMetadata;
+	imageAlt: string;
+	title: string;
+	description: string;
+}
+
+const { image, imageAlt, title, description } = Astro.props;
+---
+
+<section class="page-hero" aria-label={title}>
+	<div class="page-hero-media">
+		<Image class="page-hero-image" src={image} alt={imageAlt} width={1800} height={900} loading="eager" />
+	</div>
+	<div class="page-hero-shade"></div>
+	<div class="page-hero-copy">
+		<p class="page-hero-eyebrow"><slot /></p>
+		<h1>{title}</h1>
+		<p class="page-hero-description">{description}</p>
+	</div>
+</section>
+
+<style>
+	.page-hero {
+		position: relative;
+		isolation: isolate;
+		height: 460px;
+		box-sizing: border-box;
+		display: flex;
+		align-items: flex-start;
+		overflow: hidden;
+		background: #26362f;
+		color: white;
+	}
+	.page-hero-media {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		overflow: hidden;
+	}
+	:global(.page-hero-image) {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 75%;
+		border-radius: 0;
+	}
+	.page-hero-shade {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		background: rgba(17, 28, 23, 0.5);
+	}
+	.page-hero-copy {
+		position: relative;
+		z-index: 2;
+		width: min(1000px, calc(100% - 64px));
+		margin: 0 auto;
+		padding: 90px 0 56px;
+	}
+	.page-hero-eyebrow {
+		margin: 0 0 12px;
+		color: #e8bc72;
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.page-hero h1 {
+		max-width: 820px;
+		margin: 0 0 14px;
+		color: white;
+		font-size: 52px;
+		line-height: 1.06;
+	}
+	.page-hero-description {
+		max-width: 670px;
+		margin: 0;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+		color: #f5f2e9;
+		font-size: 18px;
+		line-height: 1.5;
+	}
+	@media (max-width: 620px) {
+		.page-hero {
+			height: 440px;
+		}
+		.page-hero-copy {
+			width: calc(100% - 40px);
+			padding: 72px 0 38px;
+		}
+		.page-hero h1 {
+			font-size: 40px;
+		}
+	}
+</style>

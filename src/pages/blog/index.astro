@@ -5,6 +5,7 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
+import PageHero from '../../components/PageHero.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
 const posts = (await getCollection('blog')).sort(
@@ -18,15 +19,19 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				width: 100%;
+				max-width: none;
+				margin: 0;
+				padding: 0;
 			}
 			ul {
 				display: flex;
 				flex-wrap: wrap;
 				gap: 2rem;
+				width: min(960px, calc(100% - 2em));
+				margin: 0 auto;
+				padding: 0 0 3em;
 				list-style-type: none;
-				margin: 0;
-				padding: 0;
 			}
 			ul li {
 				width: calc(50% - 1rem);
@@ -35,16 +40,11 @@ const posts = (await getCollection('blog')).sort(
 				text-decoration: none;
 				transition: 0.2s ease;
 			}
-			ul li:first-child {
-				width: 100%;
+			.featured-post {
+				width: 100vw;
+				flex: 0 0 100vw;
+				margin-left: calc(50% - 50vw);
 				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
 			}
 			ul li img {
 				margin-bottom: 0.5rem;
@@ -77,11 +77,11 @@ const posts = (await getCollection('blog')).sort(
 					width: 100%;
 					text-align: center;
 				}
-				ul li:first-child {
+				.featured-post {
+					width: 100vw;
+					flex: 0 0 100vw;
+					margin-left: calc(50% - 50vw);
 					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
 				}
 			}
 		</style>
@@ -92,17 +92,30 @@ const posts = (await getCollection('blog')).sort(
 			<section>
 				<ul>
 					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
+						posts.map((post, index) => (
+							<li class:list={{ 'featured-post': index === 0 }}>
+								{index === 0 && post.data.heroImage ? (
+									<a class="featured-link" href={`/blog/${post.id}/`}>
+										<PageHero
+										image={post.data.heroImage}
+										imageAlt={`${post.data.title} article cover`}
+										title={post.data.title}
+										description={post.data.description}
+									>
+										<FormattedDate date={post.data.updatedDate ?? post.data.pubDate} />
+									</PageHero>
 								</a>
+								) : (
+									<a href={`/blog/${post.id}/`}>
+										{post.data.heroImage && (
+											<Image width={720} height={360} src={post.data.heroImage} alt="" />
+										)}
+										<h4 class="title">{post.data.title}</h4>
+										<p class="date">
+											<FormattedDate date={post.data.pubDate} />
+										</p>
+									</a>
+								)}
 							</li>
 						))
 					}
