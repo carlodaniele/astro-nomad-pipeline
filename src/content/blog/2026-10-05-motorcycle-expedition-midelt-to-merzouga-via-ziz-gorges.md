@@ -1,7 +1,7 @@
 ---
 title: "Motorcycle Expedition: Midelt to Merzouga via Ziz Gorges"
 description: "Join us on a motorcycle journey from Midelt to Merzouga, exploring the Ziz Gorges, ancient mud villages, and unique desert oases."
-pubDate: 2026-10-05
+pubDate: 2026-04-19
 journey: "2026-spain-morocco"
 heroImage: "../../assets/blog/motorcycle-expedition-midelt-to-merzouga-via-ziz-gorges-1.jpg"
 ---
@@ -28,8 +28,6 @@ During our ride, we encountered various points of interest. We stopped at what a
 
 ![Motorcycle Expedition: Midelt to Merzouga via Ziz Gorges](../../assets/blog/motorcycle-expedition-midelt-to-merzouga-via-ziz-gorges-4.jpg)
 
-![Motorcycle Expedition: Midelt to Merzouga via Ziz Gorges](../../assets/blog/motorcycle-expedition-midelt-to-merzouga-via-ziz-gorges-5.jpg)
-
 ![Motorcycle Expedition: Midelt to Merzouga via Ziz Gorges](../../assets/blog/motorcycle-expedition-midelt-to-merzouga-via-ziz-gorges-6.jpg)
 
 ![Motorcycle Expedition: Midelt to Merzouga via Ziz Gorges](../../assets/blog/motorcycle-expedition-midelt-to-merzouga-via-ziz-gorges-7.jpg)
@@ -37,3 +35,5 @@ During our ride, we encountered various points of interest. We stopped at what a
 ![Motorcycle Expedition: Midelt to Merzouga via Ziz Gorges](../../assets/blog/motorcycle-expedition-midelt-to-merzouga-via-ziz-gorges-8.jpg)
 
 ![Motorcycle Expedition: Midelt to Merzouga via Ziz Gorges](../../assets/blog/motorcycle-expedition-midelt-to-merzouga-via-ziz-gorges-9.jpg)
+
+![Motorcycle Expedition: Midelt to Merzouga via Ziz Gorges](../../assets/blog/motorcycle-expedition-midelt-to-merzouga-via-ziz-gorges-5.jpg)

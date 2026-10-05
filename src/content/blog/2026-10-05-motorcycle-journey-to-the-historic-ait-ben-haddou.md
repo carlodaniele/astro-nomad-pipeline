@@ -1,7 +1,7 @@
 ---
 title: "Motorcycle Journey to the Historic Ait Ben Haddou"
 description: "On April 21st, our group embarked on a 181 km motorcycle tour from the Dades Gorges to Ait Ben Haddou, exploring its history, cinematic legacy, and diverse Moroccan terrain."
-pubDate: 2026-10-05
+pubDate: 2026-04-21
 journey: "2026-spain-morocco"
 tags: ["motorcycle-tour", "morocco", "ait-ben-haddou", "dades-gorges", "kasbah"]
 heroImage: "../../assets/blog/motorcycle-journey-to-the-historic-ait-ben-haddou-1.jpg"
@@ -22,10 +22,6 @@ Ait Ben Haddou is a fortified village, or ksar, recognized as a UNESCO World Her
 ## Our Accommodation: A Traditional Kasbah
 For our overnight stay, we secured accommodation in a kasbah. A kasbah, in North Africa, generally refers to a type of fortress, often including a residential quarter, or a fortified house, particularly in rural areas. It serves as both a defensive structure and a dwelling. While the kasbah we found was quite basic, and perhaps not the most comfortable by conventional standards, it ultimately served its purpose for a night's rest, providing a glimpse into traditional local lodging.
 
-![Motorcycle Journey to the Historic Ait Ben Haddou](../../assets/blog/motorcycle-journey-to-the-historic-ait-ben-haddou-4.jpg)
-
 ![Motorcycle Journey to the Historic Ait Ben Haddou](../../assets/blog/motorcycle-journey-to-the-historic-ait-ben-haddou-5.jpg)
-
-![Motorcycle Journey to the Historic Ait Ben Haddou](../../assets/blog/motorcycle-journey-to-the-historic-ait-ben-haddou-6.jpg)
 
 ![Motorcycle Journey to the Historic Ait Ben Haddou](../../assets/blog/motorcycle-journey-to-the-historic-ait-ben-haddou-7.jpg)

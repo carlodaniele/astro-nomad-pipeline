@@ -1,7 +1,7 @@
 ---
 title: "Morocco Motorcycle Adventure: From Merzouga to Dades Gorges"
 description: "Join our group of seven as we recount our latest motorcycle leg from Merzouga, traversing the Todra Gorges and an adventurous detour to the Dades Gorges."
-pubDate: 2026-10-05
+pubDate: 2026-04-20
 journey: "2026-spain-morocco"
 heroImage: "../../assets/blog/morocco-motorcycle-adventure-from-merzouga-to-dades-gorges-1.jpg"
 ---
