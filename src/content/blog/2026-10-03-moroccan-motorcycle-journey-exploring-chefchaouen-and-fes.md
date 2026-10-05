@@ -1,10 +1,10 @@
 ---
 title: "Moroccan Motorcycle Journey: Exploring Chefchaouen and Fes"
 description: "Join our motorcycle group as we recount our journey through Morocco, from the iconic blue city of Chefchaouen to the historic medina of Fes, capturing the unique character of each destination."
-pubDate: 2026-10-03
+pubDate: 2026-04-17
 journey: "2026-spain-morocco"
 tags: ["morocco", "motorcycle-tour", "chefchaouen", "fes", "medina", "road-trip", "atlas-mountains", "azrou"]
-heroImage: "../../assets/blog/moroccan-motorcycle-journey-exploring-chefchaouen-and-fes-1.jpg"
+heroImage: "../../assets/blog/moroccan-motorcycle-journey-exploring-chefchaouen-and-fes-5.jpg"
 ---
 
 On April 17, our group of motorcyclists departed from Tetouan, embarking on a route that would take us towards Chefchaouen. This leg of our journey was the beginning of an immersive experience in Morocco's northern regions.
@@ -31,12 +31,6 @@ Our focus on this part of the trip was primarily on Chefchaouen, allowing us to 
 
 ![Moroccan Motorcycle Journey: Exploring Chefchaouen and Fes](../../assets/blog/moroccan-motorcycle-journey-exploring-chefchaouen-and-fes-4.jpg)
 
-![Moroccan Motorcycle Journey: Exploring Chefchaouen and Fes](../../assets/blog/moroccan-motorcycle-journey-exploring-chefchaouen-and-fes-5.jpg)
-
-![Moroccan Motorcycle Journey: Exploring Chefchaouen and Fes](../../assets/blog/moroccan-motorcycle-journey-exploring-chefchaouen-and-fes-6.jpg)
-
-![Moroccan Motorcycle Journey: Exploring Chefchaouen and Fes](../../assets/blog/moroccan-motorcycle-journey-exploring-chefchaouen-and-fes-7.jpg)
-
 ![Moroccan Motorcycle Journey: Exploring Chefchaouen and Fes](../../assets/blog/moroccan-motorcycle-journey-exploring-chefchaouen-and-fes-8.jpg)
 
 ![Moroccan Motorcycle Journey: Exploring Chefchaouen and Fes](../../assets/blog/moroccan-motorcycle-journey-exploring-chefchaouen-and-fes-9.jpg)
@@ -46,3 +40,5 @@ Our focus on this part of the trip was primarily on Chefchaouen, allowing us to 
 ![Moroccan Motorcycle Journey: Exploring Chefchaouen and Fes](../../assets/blog/moroccan-motorcycle-journey-exploring-chefchaouen-and-fes-11.jpg)
 
 ![Moroccan Motorcycle Journey: Exploring Chefchaouen and Fes](../../assets/blog/moroccan-motorcycle-journey-exploring-chefchaouen-and-fes-12.jpg)
+
+![Moroccan Motorcycle Journey: Exploring Chefchaouen and Fes](../../assets/blog/moroccan-motorcycle-journey-exploring-chefchaouen-and-fes-7.jpg)

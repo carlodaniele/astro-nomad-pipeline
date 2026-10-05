@@ -1,7 +1,7 @@
 ---
 title: "A Challenging Transfer: From Seville to Tetouan by Motorcycle"
 description: "Our journey on April 16 took us from Seville, Spain, across the Strait of Gibraltar to Tetouan, Morocco. This transfer day was marked by ferry delays, lengthy port procedures, and a challenging ride to our accommodation."
-pubDate: 2026-10-03
+pubDate: 2026-04-16
 journey: "2026-spain-morocco"
 heroImage: "../../assets/blog/a-challenging-transfer-from-seville-to-tetouan-by-motorcycle-1.jpg"
 ---

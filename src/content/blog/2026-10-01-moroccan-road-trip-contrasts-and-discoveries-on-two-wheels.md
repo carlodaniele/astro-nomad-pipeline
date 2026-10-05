@@ -1,7 +1,7 @@
 ---
 title: "Moroccan Road Trip: Contrasts and Discoveries on Two Wheels"
 description: "Join a group of seven motorcyclists on their journey through Morocco, exploring the vibrant cities of El Jadida, Rabat, and Kenitra, and experiencing the country's unique blend of tradition and modernity."
-pubDate: 2026-10-01
+pubDate: 2026-04-25
 journey: "2026-spain-morocco"
 tags: ["marrakech", "fes", "morocco", "travel", "city-guide"]
 heroImage: "../../assets/blog/moroccan-road-trip-contrasts-and-discoveries-on-two-wheels-1.jpg"

@@ -1,7 +1,7 @@
 ---
 title: "Spain by Motorcycle: Our First Stage from Barcelona to Albarracín"
 description: "Embark on the first Spanish leg of our motorcycle tour from Barcelona to Albarracín, discovering medieval towns and thrilling roads across stunning landscapes."
-pubDate: 2026-10-02
+pubDate: 2026-04-13
 journey: "2026-spain-morocco"
 tags: ["motorcycle-tour", "spain", "barcelona", "morella", "albarracin", "road-trip", "travel", "safety", "medieval-village"]
 heroImage: "../../assets/blog/spain-by-motorcycle-our-first-stage-from-barcelona-to-albarrac-n-1.jpg"
