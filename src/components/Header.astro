@@ -9,6 +9,7 @@ import HeaderLink from './HeaderLink.astro';
 		<div class="internal-links">
 						<HeaderLink href="/">Home</HeaderLink>
 						<HeaderLink href="/blog">Blog</HeaderLink>
+						<HeaderLink href="/journeys">Journeys</HeaderLink>
 						<HeaderLink href="/about">About</HeaderLink>
 		</div>
 		<div class="social-links">
@@ -87,6 +88,13 @@ import HeaderLink from './HeaderLink.astro';
 		}
 	}
 	@media (max-width: 720px) {
+		nav {
+			flex-wrap: wrap;
+		}
+		.internal-links {
+			display: flex;
+			flex-wrap: wrap;
+		}
 		.social-links {
 			display: none;
 		}
