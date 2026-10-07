@@ -1,7 +1,7 @@
 ---
 title: "From Verucchio to the Adriatic: My First Three Days in Slovenia and Croatia"
 description: "Join me on a recap of the first three days of my motorcycle adventure, traversing Slovenia's stunning Vršič Pass, exploring Lake Bled, and cruising Croatia's spectacular Adriatic coastline on my Yamaha Ténéré World Raid."
-pubDate: 2026-10-07
+pubDate: 2026-06-13
 journey: "2026-balkans"
 heroImage: "../../assets/blog/from-verucchio-to-the-adriatic-my-first-three-days-in-slovenia-and-croatia-1.jpg"
 ---
