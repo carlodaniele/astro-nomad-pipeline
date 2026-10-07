@@ -1,7 +1,7 @@
 ---
 title: "Moroccan Odyssey: From El Jadida to Kenitra via Rabat"
 description: "On April 25th, our group of seven motorcyclists journeyed from El Jadida to Kenitra, navigating challenging Moroccan roads and experiencing the distinct charm of Rabat, contrasting its modern order with the country's vibrant, chaotic urban centers."
-pubDate: 2026-10-06
+pubDate: 2026-04-25
 journey: "2026-spain-morocco"
 heroImage: "../../assets/blog/moroccan-odyssey-from-el-jadida-to-kenitra-via-rabat-1.jpg"
 ---
