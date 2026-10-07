@@ -1,7 +1,7 @@
 ---
 title: "A Rest Day in Marrakech: Exploring the Red City"
 description: "Our group of seven motorcyclists took a well-deserved rest day in Marrakech, delving into the city's vibrant Medina and bustling main square."
-pubDate: 2026-10-05
+pubDate: 2026-04-24
 journey: "2026-spain-morocco"
 tags: ["motorcycle-travel", "marrakech", "morocco", "medina", "djemaa-el-fna", "travel-guide", "cultural-exploration"]
 heroImage: "../../assets/blog/a-rest-day-in-marrakech-exploring-the-red-city-1.jpg"
