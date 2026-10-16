@@ -1,7 +1,7 @@
 ---
 title: "Motorcycle Journey from Plitvice Lakes to Split: A Ride Through Croatia's Inland Beauty"
 description: "This post details a motorcycle trip through Croatia, departing from Vranovaca near Plitvice Lakes and heading to Split. It covers the D1 and D218 routes, describing the varied terrain of uninhabited woods, meadows, and scattered villages, along with the characteristics of the roads encountered."
-pubDate: 2026-10-15
+pubDate: 2026-06-14
 journey: "2026-balkans"
 heroImage: "../../assets/blog/motorcycle-journey-from-plitvice-lakes-to-split-a-ride-through-croatia-s-inland-beauty-1.jpg"
 ---
